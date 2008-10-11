@@ -87,6 +87,8 @@ class Redirect(HTTPError):
         if newloc.startswith('/'):
             newloc = ctx.home + newloc
 
+        newloc = newloc.replace("https://", "http://")
+
         headers = {
             'Content-Type': 'text/html',
             'Location': newloc
